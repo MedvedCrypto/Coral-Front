@@ -2,6 +2,8 @@ import React, { useCallback, useContext, useEffect, useState } from "react";
 
 import "../css/style.css";
 
+import hero from "./public/images/dist/hero.svg";
+
 
 const MainPage: React.FC = () => {
 
@@ -43,7 +45,7 @@ const MainPage: React.FC = () => {
                   data-aos="zoom-in"
                   data-aos-delay={600}
                 >
-                  <img src="../images/dist/hero.svg" alt="" />
+                  <img src={hero} alt="" />
                 </div>
               </div>
             </div>
