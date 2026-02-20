@@ -6,25 +6,36 @@ import { nodePolyfills } from "vite-plugin-node-polyfills";
 export default defineConfig({
   plugins: [
     nodePolyfills({
-      // To add only specific polyfills, add them here. If no option is passed, adds all polyfills
       include: ["path"],
-      // To exclude specific polyfills, add them to this list. Note: if include is provided, this has no effect
-      exclude: [
-        "http", // Excludes the polyfill for `http` and `node:http`.
-      ],
-      // Whether to polyfill specific globals.
+      exclude: ["http"],
       globals: {
-        Buffer: true, // can also be 'build', 'dev', or false
+        Buffer: true,
         global: true,
         process: true,
       },
-      // Override the default polyfills for specific modules.
       overrides: {
-        // Since `fs` is not supported in browsers, we can use the `memfs` package to polyfill it.
         fs: "memfs",
       },
-      // Whether to polyfill `node:` protocol imports.
       protocolImports: true,
     }),
+    react(),
+    {
+      name: 'public-url-imports',
+      resolveId(source) {
+        // Перехватываем импорты, начинающиеся с /images/ или /public/
+        if (source.startsWith('/images/') || source.startsWith('/public/')) {
+          return `\0${source}`; // виртуальный модуль
+        }
+        return null;
+      },
+      load(id) {
+        if (id.startsWith('\0/images/') || id.startsWith('\0/public/')) {
+          const path = id.slice(1); // убираем нулевой байт
+          // Экспортируем строку с путём как значение по умолчанию
+          return `export default ${JSON.stringify(path)};`;
+        }
+        return null;
+      }
+    }
   ],
 });
