@@ -1,7 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
-import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -19,14 +18,18 @@ export default defineConfig({
       },
       protocolImports: true,
     }),
-    react(),
+    react({
+      // Явно указываем использовать новый JSX трансформатор
+      jsxRuntime: 'automatic',
+      // Исключаем определенные модули из обработки
+      exclude: /node_modules\/.*(?<!\.test\.)[jt]sx?$/,
+    }),
     {
       name: 'public-url-imports',
       resolveId(source) {
-        // Обрабатываем разные типы путей к public
         if (source.startsWith('/images/') || 
             source.startsWith('/public/') ||
-            source.includes('/images/dist/') ||  // относительные пути с images/dist
+            source.includes('/images/dist/') ||
             source.includes('/public/images/')) {
           return `\0${source}`;
         }
@@ -34,12 +37,9 @@ export default defineConfig({
       },
       load(id) {
         if (id.startsWith('\0')) {
-          const path = id.slice(1); // убираем нулевой байт
-          // Экспортируем строку с путём как значение по умолчанию
-          // Извлекаем только часть после /images/ или /public/
+          const path = id.slice(1);
           let publicPath = path;
           
-          // Пытаемся найти путь относительно public
           const imagesMatch = path.match(/(?:.*?)(\/images\/.*)/);
           const publicMatch = path.match(/(?:.*?)(\/public\/.*)/);
           
@@ -56,6 +56,35 @@ export default defineConfig({
     }
   ],
   build: {
-    target: "es2022"
-  }
+    target: "es2022",
+    // Добавляем настройки для CommonJS
+    commonjsOptions: {
+      include: [/node_modules/],
+      extensions: ['.js', '.cjs'],
+      strictRequires: true,
+      transformMixedEsModules: true,
+    },
+    rollupOptions: {
+      // Явно указываем внешние зависимости для React
+      external: [],
+      output: {
+        manualChunks: undefined,
+      },
+    },
+  },
+  // Оптимизация зависимостей
+  optimizeDeps: {
+    include: [
+      'react',
+      'react-dom',
+      'react/jsx-runtime',
+    ],
+    esbuildOptions: {
+      target: 'es2022',
+    },
+  },
+  // Разрешение модулей
+  resolve: {
+    dedupe: ['react', 'react-dom'],
+  },
 });
