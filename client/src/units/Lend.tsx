@@ -25,7 +25,7 @@ import {
   queryAllOffers,
 } from "./buttons/btnLend.ts";
 
-import sprite from "../images/sprite.svg";
+import sprite from "/images/sprite.svg";
 
 interface LendProps {
   ownerAddr: string;
@@ -44,16 +44,16 @@ interface CryptoOption {
   imgSrc: string;
 }
 
-import usdcImg from "../images/dist/axl.webp";
+import usdcImg from "/images/dist/axl.webp";
 // import kujiImg from "../images/dist/kuji.webp";
-import uskImg from "../images/dist/usk.webp";
+import uskImg from "/images/dist/usk.webp";
 
-import usdImg from "../images/dist/usd.webp";
-import eurImg from "../images/dist/eur.webp";
+import usdImg from "/images/dist/usd.webp";
+import eurImg from "/images/dist/eur.webp";
 // import rubImg from "../images/dist/deda.jpg";
 
-import payPalImg from "../images/dist/paypal.webp";
-import wiseImg from "../images/dist/wise.webp";
+import payPalImg from "/images/dist/paypal.webp";
+import wiseImg from "/images/dist/wise.webp";
 
 const cryptoOptions: CryptoOption[] = [
   { value: "USDC", text: "USDC", imgSrc: usdcImg },
