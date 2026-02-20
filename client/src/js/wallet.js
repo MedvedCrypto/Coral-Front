@@ -1,5 +1,5 @@
 import { assets, chains } from "chain-registry";
-import { chainRegistryChainToKeplr } from "@chain-registry/keplr";
+import { chainRegistryChainToKeplr } from "@chain-registry/v2-keplr";
 import { getGasPriceFromChainRegistryItem } from "../common/account/clients";
 
 
