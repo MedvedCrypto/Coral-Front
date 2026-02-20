@@ -23,7 +23,7 @@ export default defineConfig({
       name: 'public-url-imports',
       resolveId(source) {
         // Перехватываем импорты, начинающиеся с /images/ или /public/
-        if (source.startsWith('/images/') || source.startsWith('/public/')) {
+        if (source.startsWith('/images/') || source.startsWith('/public/' || source.startsWith('../images/' || source.startsWith('../../images/')) {
           return `\0${source}`; // виртуальный модуль
         }
         return null;
