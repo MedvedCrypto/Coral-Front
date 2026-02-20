@@ -1,0 +1,74 @@
+.pagination
+  margin-top: rem(35)
+
+  ul
+    @include aic
+    margin: 0
+    padding: 0
+
+    li
+      list-style: none
+      color: #7A7A7A
+      font-weight: 600
+      @include adaptiv('font-size', 17, 15 , 0)
+      @include adaptiv('margin-right', 16, 10 , 0)
+      
+      a
+        text-decoration: none
+        color: #7A7A7A
+        font-weight: 600
+        font-size: rem(17)
+        transition: $transition
+        @include aic-jcc
+        width: 100%
+        height: 100%
+
+        &:hover
+          color: $accent   
+
+      &.active
+        a
+          color: $accent  
+
+  &__back,
+  &__forward
+    border-radius: 100%
+    @include aic-jcc
+    background: $accent
+    @include adaptiv('max-width', 32, 25 , 0)
+    @include adaptiv('min-width', 32, 25 , 0)
+    @include adaptiv('height', 32, 25 , 0)
+
+    .icon
+      fill: white
+
+      @include adaptiv('max-width', 24, 20 , 0)
+      @include adaptiv('min-width', 24, 20 , 0)
+      @include adaptiv('height', 24, 20 , 0)
+      
+
+  &__back
+    .icon
+      transform: rotate(90deg)
+    
+
+  &__forward
+    margin-right: rem(5)!important
+    .icon
+      transform: rotate(-90deg)
+
+  &__start,
+  &__end
+    margin-right: 0 !important
+    .icon
+      fill: $accent
+
+  &__start
+    margin-right: rem(5)!important
+
+  &__end
+    .icon
+      transform: rotate(180deg)
+
+  &_centered
+    @include aic-jcc

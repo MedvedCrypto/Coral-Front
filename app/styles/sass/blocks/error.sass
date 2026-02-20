@@ -1,0 +1,17 @@
+.error
+  text-align: center
+  
+  &__inner
+    @include aic-fdc
+    justify-content: center
+    padding: rem(50) 0
+
+  &__number
+    color: $accent
+    font-weight: 700
+    @include adaptiv('font-size', 300, 150, 0)
+
+  &__text
+    color: white
+    @include adaptiv('font-size', 30, 20, 0)
+    margin: rem(20) 0

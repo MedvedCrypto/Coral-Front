@@ -1,0 +1,30 @@
+extends layouts/main
+
+block vars
+  - var description = '';
+  - var keywords= '';
+  - var ogtitle = '';
+  - var ogtype = '';
+  - var ogurl = '';
+  - var ogimg = '';
+
+block title
+  | Open Trades | You need to connect your wallet.
+block main
+  .wrapper
+    .content
+      include includes/header2
+      
+      .trades
+        .container
+          include includes/empty
+          +empty('Open Trades','You need to connect your wallet.')
+          //- +empty('Open Trades','You need to connect your wallet.','empty_centered',true,'Create trade')
+
+          //- include includes/table
+
+      
+      
+    include includes/footer
+
+  include includes/scripts 

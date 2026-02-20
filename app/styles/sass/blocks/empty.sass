@@ -1,0 +1,21 @@
+.empty
+  background: #26262A
+  border-radius: rem(7)
+  color: white
+  font-weight: 600
+  @include aic
+  
+  @include adaptiv('min-height', 75, 69 , 0)
+  @include adaptiv('font-size', 18, 16 , 0)
+  @include adaptiv('padding-top', 25, 25 , 0)
+  @include adaptiv('padding-bottom', 25, 25 , 0)
+  @include adaptiv('padding-left', 35, 20 , 0)
+  @include adaptiv('padding-right', 35, 20 , 0)
+
+  @include xs
+    justify-content: center
+    text-align: center
+
+  &_centered
+    justify-content: center
+    text-align: center

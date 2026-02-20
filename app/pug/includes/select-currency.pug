@@ -1,0 +1,22 @@
+.select.select_single 
+  .select__label Currency (FIAT)
+  .select__inner 
+    .select__selected.select-js
+      input(type="hidden", name="currency").select__input
+      .select__col   
+        .select__img 
+          img(src="images/dist/usd.webp", alt="")
+        .select__text.select__text_txt-uppercase.select-txt-js usd
+      .select__col   
+        .icon
+          svg
+            use(xlink:href='sprite.svg#angle')  
+
+    .select__dropdown.scroll-js
+      each item in currency
+        .select__item.select-item-js(data-val=item.cur data-text=item.cur)
+          .select__col   
+            .select__img 
+              img(src="images/dist/"+item.cur+".webp", alt="").select-img-js
+            
+            .select__text.select__text_txt-uppercase=item.cur

@@ -1,0 +1,64 @@
+header.header
+  .container 
+    .header__inner
+
+      .header__col
+        a(href="#").header__logo
+          img(src="images/dist/logo.svg", alt="")
+
+      .header__col
+        .notification
+          .notification__inner.notification-js
+            .notification__count 1
+            .icon
+              svg
+                use(xlink:href='sprite.svg#notification')
+          
+          .notification__dropdown
+
+            .notification__dropdown-top
+              .notification__dropdown-top-inner
+                .notification__title Notifications
+                a(href="#").notification__mark Mark all as read 
+            
+            .notification__list.scroll-js
+              mixin notification
+                a(href="#").notification__item
+                  .notification__item-col
+                    .icon
+                      svg
+                        use(xlink:href='sprite.svg#info')
+                    div
+                      .notification__item-label Trade finished successfully
+                      .notification__item-sublabel with username
+
+                  .notification__item-col
+                    .notification__item-time 20m ago
+              +notification  
+              +notification  
+              +notification  
+              +notification  
+              +notification  
+              +notification  
+              +notification  
+
+        .header__btn-wrap
+          a(href="open-trades.html").btn.btn_bordered
+            .icon
+              svg
+                use(xlink:href='sprite.svg#hashtag')
+            span My Open Trades
+
+          a(href="open-trades-history.html").btn.btn_bordered.btn_my-history
+            .icon
+              svg
+                use(xlink:href='sprite.svg#history')
+            span My History
+
+          a(href="#").btn.btn_accent.btn_accent-bordered.btn_user
+            .icon
+              svg
+                use(xlink:href='sprite.svg#log2')
+
+
+            span Username

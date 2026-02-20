@@ -1,0 +1,130 @@
+.input-wrap
+  @include fww
+
+.input
+  position: relative
+
+  label
+    color: #DEDEDE
+    font-size: rem(14)
+    margin-bottom: rem(15)
+    display: inline-flex
+
+  label.error
+    margin-bottom: 0
+    position: absolute
+    top: 80px
+    left: 0
+    font-size: rem(10)
+    color: red
+
+  input,
+  textarea
+    background: #2E3035
+    border: rem(1) solid #2E3035
+    border-radius: rem(6)
+    width: 100%
+    font-size: rem(12)
+    font-weight: 700
+    padding: 0 rem(15)
+    color: white
+
+    @include placeholder
+      color: #898989
+      font-size: rem(12)
+      font-weight: 700
+
+  input
+    min-height: rem(44)
+  textarea
+    min-height: rem(95)
+    padding: rem(15)
+    resize: vertical
+
+  &__message
+    color: #5a5a5a
+    font-size: rem(10)
+    line-height: rem(12)
+    margin-top: rem(9)
+    text-align: right
+    padding-right: rem(19)
+    display: block
+    width: 100%
+
+    &_valid
+      opacity: 0
+      pointer-events: none
+
+  &__info
+    position: relative
+
+    .icon
+      min-width: rem(15)
+      max-width: rem(15)
+      height: rem(15)
+      margin-left: rem(10)
+      fill: #929292
+      transition: $transition
+      cursor: pointer
+
+    &:hover
+      .icon
+        fill: $accent
+
+      .input__info-window
+        bottom: calc( 100% + 10px )
+        opacity: 1
+
+  &__info-window
+    position: absolute
+    background: #19191C
+    box-shadow: 0 0 0 0.2px white
+    border-radius: rem(6)
+    transition: $transition
+    left: 50%
+    transform: translateX(-50%)
+    bottom: 0
+    padding: rem(10)
+    min-width: rem(300)
+    opacity: 0
+    pointer-events: none
+
+    @include xs
+      min-width: rem(250)
+
+    p
+      font-size: rem(12)
+      line-height: normal
+      color: white
+      font-weight: 400
+      margin-bottom: rem(5)
+      
+      @include xs
+        font-size: rem(10)
+        line-height: rem(15)
+        
+
+      &:last-child
+        margin: 0
+
+  &.error,
+  &.success
+    .input__message
+      position: absolute
+      top: calc( 100% + 9px )
+      margin: 0
+      opacity: 1
+
+  &.error
+    input
+      border-color: red
+
+    .input__message
+      color: red
+
+  &.success
+    input
+      border-color: green
+
+    .input__message
+      color: green

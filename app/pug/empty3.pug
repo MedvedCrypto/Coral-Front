@@ -1,0 +1,29 @@
+extends layouts/main
+
+block vars
+  - var description = '';
+  - var keywords= '';
+  - var ogtitle = '';
+  - var ogtype = '';
+  - var ogurl = '';
+  - var ogimg = '';
+
+block title
+  | Open Trades | There are no trades here yet.
+block main
+  .wrapper
+    .content
+      include includes/header2
+      
+      .trades
+        .container
+          include includes/empty
+          +empty('Open Trades','There are no trades here yet.')
+          //- +empty('Open Trades','There are no trades here yet.','empty_centered',true,'Create trade')
+      
+          //- include includes/table
+      
+      
+    include includes/footer
+
+  include includes/scripts 

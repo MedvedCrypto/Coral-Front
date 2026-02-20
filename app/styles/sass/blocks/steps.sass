@@ -1,0 +1,409 @@
+.steps
+  &__top
+    background: #26262A
+    border-radius: rem(7)
+    @include aistr
+    @include adaptiv('padding-top', 23, 20 , 0)
+    @include adaptiv('padding-bottom', 23, 20 , 0)
+    @include adaptiv('padding-left', 30, 20 , 0)
+    @include adaptiv('padding-right', 30, 20 , 0)
+    margin-bottom: rem(20)
+
+    @include sm
+      flex-wrap: wrap
+
+  &__item
+    border-right: rem(0.5) solid #7B7B7B
+    width: 33.33%
+    @include aic
+    @include adaptiv('padding-left', 24, 10 , 0)
+    @include adaptiv('padding-right', 15, 10 , 0)
+
+    @include md
+      padding: 0 rem(25)
+      justify-content: center
+
+    &:first-child
+      padding-left: 0
+
+    &:last-child
+      padding-right: 0
+      text-align: right
+      border: none
+
+      @include sm
+        text-align: center
+
+    &:nth-child(3)
+      @include sm
+        border: none
+        padding-right: 0
+
+    &_time
+      flex: 1
+      min-width: rem(200)
+      justify-content: flex-end
+
+      @include sm
+        width: 100%
+        padding: 0!important
+        justify-content: center
+
+  &__item-label
+    font-size: rem(16)
+    font-weight: 400
+    color: white
+    margin-bottom: rem(8)
+
+  &__label-mobile
+    display: none
+    text-align: center
+    color: $accent
+    margin-bottom: rem(7)
+    font-size: rem(16)
+
+    @include md
+      display: block
+
+    @include sm
+      margin-top: rem(15)
+      font-size: rem(18)
+
+  &__time
+    @include adaptiv('font-size', 24, 16 , 0)
+    font-weight: 700
+    color: white
+
+    @include sm
+      font-size: rem(24)
+
+  &__count
+    border-radius: 100%
+    overflow: hidden
+    line-height: 0
+    font-weight: 700
+    color: white
+    background: #3A3A41
+    @include aic-jcc
+    transition: $transition
+    @include adaptiv('max-width', 41, 25 , 0)
+    @include adaptiv('min-width', 41, 25 , 0)
+    @include adaptiv('height', 41, 25 , 0)
+    @include adaptiv('font-size', 20, 12 , 0)
+    @include adaptiv('margin-right', 20, 10 , 0)
+
+    @include md
+      margin-right: 0
+
+    @include sm
+      max-width: rem(41)
+      min-width: rem(41)
+      height: rem(41)
+      font-size: rem(20)
+
+    .icon
+      fill: $accent
+      position: absolute
+      opacity: 0
+      transition: $transition
+
+  &__label
+    font-weight: 600
+    color: white
+    transition: $transition
+
+    @include adaptiv('font-size', 18, 13 , 0)
+
+    @include md
+      display: none
+
+  &__step
+    @include aic
+
+    &.active
+      .steps__count
+        background: $accent
+      .steps__label
+        color: $accent
+
+    &.passed
+      .steps__count
+        background: none
+        span
+          display: none
+
+        .icon
+          position: relative
+          opacity: 1
+
+      .steps__label
+        color: #7B7B7B
+
+  &__content
+    @include aistr
+
+    @include sm
+      flex-direction: column-reverse
+
+  &__content-col
+    &:first-child
+      margin-right: rem(20)
+      max-width: rem(359)
+      width: 100%
+
+      @include sm
+        max-width: 100%
+        margin-right: 0
+        margin-top: rem(20)
+
+      .steps__content-item
+        @include fdc-jfcsb
+        height: 100%
+        @include adaptiv('padding', 23, 20 , 0)
+
+    &:last-child
+      flex: 1
+      @include fdc-jfcsb
+
+      .steps__content-item
+        margin-bottom: rem(20)
+        @include adaptiv('padding', 25, 20 , 0)
+
+        &:first-child
+          flex: 1
+          @include jfcsb
+
+          @include md
+            flex-direction: column
+
+        &:last-child
+          margin-bottom: 0
+          min-height: rem(97)
+          padding: rem(28)
+
+  &__content-item
+    background: #26262A
+    border-radius: rem(7)
+
+  &__contacts-top
+    color: white
+    font-size: rem(18)
+    font-weight: 600
+    padding-bottom: rem(16)
+    margin-bottom: rem(18)
+    border-bottom: rem(0.5) solid #7B7B7B
+
+  &__contacts-text
+    color: #7B7B7B
+    line-height: rem(19)
+    font-weight: 600
+    @include adaptiv('font-size', 16, 12 , 0)
+
+  &__content-btn
+    text-align: center
+    @include aic-jcc
+    @include adaptiv('font-size', 16, 12 , 0)
+    @include adaptiv(' min-height', 42, 32 , 0)
+    font-weight: 700
+    color: white
+    background: #35353D
+    width: 100%
+    border-radius: rem(4)
+    cursor: pointer
+    text-decoration: none
+    outline: none
+    border: none
+    transition: $transition
+
+    &:hover
+      background: $accent
+
+  &__contacts-link
+    min-height: rem(28)
+    border-radius: rem(43)
+    min-width: rem(95)
+    display: inline-flex
+    align-items: center
+    font-size: rem(10)
+    line-height: 0
+    padding: 0 rem(9)
+    cursor: pointer
+    text-decoration: none
+    margin-top: rem(20)
+
+    .icon
+      max-width: rem(14)
+      min-width: rem(14)
+      height: rem(14)
+      margin-right: rem(4.83)
+
+    &_tg
+      color: white
+      background: #22a0d3
+      .icon
+        fill: white
+
+  &__contacts-bottom
+    padding-top: rem(14)
+    margin-top: rem(14)
+    border-top: rem(0.5) solid #7B7B7B
+
+  &__contacts-info
+    @include aic
+    margin-bottom: rem(18)
+
+  &__contacts-info-new
+    margin-right: rem(20)
+    min-height: rem(25)
+    border-radius: rem(30)
+    font-weight: 600
+    color: $accent
+    background: #4A4A4A
+    padding: 0 rem(10)
+    @include aic-jcc
+    text-align: center
+    line-height: 0
+    min-width: rem(55)
+    @include adaptiv('font-size', 15, 11 , 0)
+
+  &__contacts-powered-by
+    font-weight: 600
+    color: #7B7B7B
+    text-align: center
+    margin-top: rem(14)
+    @include adaptiv('font-size', 12, 9 , 0)
+
+    a
+      color: #7b7b7b
+      transition: $transition
+
+      &:hover
+        color: $accent
+
+  &__content-item-col
+    @include md
+      margin-bottom: rem(20)
+
+    &:last-child
+      flex: 1
+      max-width: rem(488)
+      width: 100%
+
+      @include md
+        margin-bottom: 0
+
+  &__content-item-payments
+    h2
+      font-size: rem(16)
+      color: white
+      margin-bottom: rem(17)
+
+    span
+      display: inline-flex
+      align-items: center
+      justify-content: center
+      color: white
+      border-radius: rem(5.63)
+      font-size: rem(14)
+      font-weight: 400
+      line-height: 0
+      text-align: center
+      background: #1D2023
+      min-height: rem(26)
+      padding: 0 rem(10)
+
+  &__content-item-price
+    margin-bottom: rem(13)
+
+    &:last-child
+      margin-bottom: 0
+
+    h2
+      font-size: rem(14)
+      color: white
+      margin-bottom: rem(8)
+
+  &__content-price-list
+    padding: rem(15)
+    background: #2E3035
+    border-radius: rem(3)
+
+  &__content-price-item
+    @include aic-jfcsb
+    margin-bottom: rem(11)
+
+    &:last-child
+      margin-bottom: 0
+
+    span
+      color: white
+      font-weight: 700
+      @include adaptiv('font-size', 16, 15 , 0)
+
+      &:last-child
+        text-align: right
+
+    &_total
+      margin-top: rem(18)
+      padding-top: rem(18)
+      border-top: rem(0.5) solid #7B7B7B
+
+  &__content-mark
+    @include aic-jfcsb
+
+    @include md
+      align-items: flex-start
+
+    .icon
+      fill: #83D081
+
+    p
+      font-size: rem(18)
+      font-weight: 700
+      color: white
+      line-height: rem(20)
+      margin-bottom: rem(17)
+
+    .btn
+      max-width: rem(122)
+      min-width: rem(122)
+      width: 100%
+      padding-left: rem(10)
+      padding-right: rem(10)
+      font-size: rem(17)
+
+  &__content-mark-col
+    flex: 1
+    @include aic-jfcsb
+    @include adaptiv('margin-left', 38, 13 , 0)
+
+    @include md
+      flex-direction: column
+      align-items: flex-start
+
+  &__text
+    text-align: right
+    margin-top: rem(30)
+
+    p,
+    a
+      font-weight: 600
+
+      @include adaptiv('line-height', 16, 14 , 0)
+
+    p
+      color: #a6a6a6
+      margin-bottom: rem(15)
+      @include adaptiv('font-size', 14, 12 , 0)
+
+      &:last-child
+        margin-bottom: 0
+
+    a
+      text-decoration: underline
+      color: white
+      transition: $transition
+      @include adaptiv('font-size', 16, 14 , 0)
+
+      &:hover
+        color: $accent

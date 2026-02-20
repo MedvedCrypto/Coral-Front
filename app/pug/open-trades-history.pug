@@ -1,0 +1,63 @@
+extends layouts/main
+
+block vars
+  - var description = '';
+  - var keywords= '';
+  - var ogtitle = '';
+  - var ogtype = '';
+  - var ogurl = '';
+  - var ogimg = '';
+
+block title
+  | Open Trades | history
+block main
+  .wrapper
+    .content
+      include includes/header2
+      
+      .trades
+        .container
+            
+          h2.title.title_h2.title_aic
+            | Open Trades
+            a(href="#").btn.btn_gray.btn_centered
+              span Create trade
+
+              .icon
+                svg
+                  use(xlink:href='sprite.svg#plus')
+
+          .trades__list
+            .trades__item
+              .trades__item-inner
+                .trades__col
+                  .trades__item-name Buying axlUSDC
+                  .trades__item-user.trades__item-label from username
+                .trades__col
+                  .trades__item-label Amount
+                  .trades__item-content 2 axlUSDC
+                .trades__col
+                  .trades__item-label Status
+                  .trades__item-content.trades__item-content_accent Waiting for funds
+                .trades__col
+                  div
+                    .trades__item-label Time remaining
+                    .trades__item-content 05h 58m 39s
+                  a(href="#").btn.btn_accent View trade 
+
+              include includes/table
+              
+            
+
+
+
+
+    
+         
+
+
+      
+      
+    include includes/footer
+
+  include includes/scripts 

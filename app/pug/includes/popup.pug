@@ -1,0 +1,70 @@
+.popup.popup-js.scroll-js
+  .popup__window
+    h2.title.title_h2 Create Offer
+
+    //- .switch.switch-js
+    //-   .switch__inner
+    //-     .switch__backlight.switch-backlight-js  
+    //-     .switch__item.active Buy  
+    //-     .switch__item Sell
+    
+    div
+      .popup__col-wrap 
+        .popup__col.popup__col_half
+          include ../includes/select-crypto2 
+        
+        .popup__col.popup__col_half
+          include ../includes/select-currency2
+
+        .popup__col.popup__col_half
+          include ../includes/select-payment2
+      
+      .popup__col-wrap.popup__col-wrap_input-wrap 
+        .popup__col.popup__col_half
+          .input
+            label(for="min-amount") Min amount of axlUSDC
+            input#min-amount(type="text" name="Min amount" placeholder="axIUSDC 0" value="axIUSDC 0")  
+            
+        .popup__col.popup__col_half
+          .input
+            label(for="max-amount") Max amount of axlUSDC
+            input#max-amount(type="text" name="Max amount" placeholder="axIUSDC 1000" value="axIUSDC 1000")  
+            
+        
+        .popup__col.popup__col_half
+          .select.select_single 
+            .select__label Market price
+            .select__inner 
+              .select__selected.select-js
+                input(type="hidden", name="crypto").select__input
+                .select__col   
+                  .select__text.select-txt-js Above
+                .select__col   
+                  .icon
+                    svg
+                      use(xlink:href='sprite.svg#angle')  
+
+              .select__dropdown.scroll-js
+                each item in price
+                  .select__item.select-item-js(data-val=item.name data-text=item.name)
+                    .select__col   
+                      .select__text=item.name
+      
+        .popup__col.popup__col_half
+          .input
+            label(for="margin") Margin
+            input#margin(type="text" name="Nargin" placeholder="5%" value="5%")  
+            
+      .popup__col-wrap 
+        .popup__col.popup__col_full 
+          .input
+            label(for="telegram") Your Telegram username
+            input#telegram(type="text" name="Telegram" placeholder="@username")  
+            
+    .popup__bottom
+      .popup__bottom-col
+        p 1 axlUSDC =
+      .popup__bottom-col
+        .popup__bottom-btn-wrap
+          button.btn.btn_cancel.popup-cancel-js Cancel 
+          button.btn.btn_accent.btn_centered Create

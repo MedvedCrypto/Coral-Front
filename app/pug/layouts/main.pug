@@ -1,0 +1,39 @@
+block vars
+  - var description;
+  - var keywords;
+  - var ogtitle;
+  - var ogtype;
+  - var ogurl;
+  - var ogimg;
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    title
+      block title
+
+    meta(name='description' content=description)
+    meta(name='keywords' content=keywords)
+
+    meta(property='og:title' content=ogtitle)
+    meta(property='og:type' content=ogtype)
+    meta(property='og:url' content=ogurl)
+    meta(property='og:image' content=ogimg)
+
+    meta(name='theme-color' content='#F2284E')
+    meta(name='msapplication-navbutton-color' content='#F2284E')
+    meta(name='apple-mobile-web-app-status-bar-style' content='#F2284E')
+    
+      
+    link(rel="stylesheet" href="css/app.min.css")
+    link(rel='shortcut icon' href='images/favicon.png' type='image/png')
+    link(rel='apple-touch-icon' href='images/apple-touch-icon.png')
+    link(rel='apple-touch-icon' sizes='72x72' href='images/apple-touch-icon-72x72.png')
+    link(rel='apple-touch-icon' sizes='114x114' href='images/apple-touch-icon-114x114.png')
+    
+
+  body
+    block main

@@ -1,0 +1,160 @@
+.sellers
+  .container 
+    h2.title.title_h2.title_centered Buy from these sellers
+
+    .sellers__table.sellers-table 
+      .sellers-table__thead.sellers-thead-js 
+        .sellers-table__th.seller-th-js Trader 
+        .sellers-table__th.seller-th-js Price
+        .sellers-table__th.seller-th-js Trade limit
+        .sellers-table__th.sellers-table__th_filter.seller-th-js 
+          span Payment method
+          .sellers-table__filter.filter
+            .filter__icon.filter-js
+              .icon
+                svg
+                  use(xlink:href='sprite.svg#filter')
+
+            .filter__dropdown
+              .filter__title Sort By
+              .filter__list
+                ul 
+                  li 
+                    label(for="price") Price: lowest to highest
+                      input#price(type="radio" name="sort" value="Price")
+                      span
+                  li 
+                    label(for="range") Range
+                      input#range(type="radio" name="sort" value="Range")
+                      span
+                  li 
+                    label(for="trades") Trades 
+                      input#trades(type="radio" name="sort" value="Trades")
+                      span
+              
+              .filter__title Number of pages
+              .filter__number-list  
+                ul 
+                  li 
+                    input(type="radio" name="page" value="10")
+                    span 10
+                  li 
+                    input(type="radio" name="page" value="25")
+                    span 25
+                  li 
+                    input(type="radio" name="page" value="50")
+                    span 50
+                  li 
+                    input(type="radio" name="page" value="100")
+                    span 100
+                     
+                     
+
+
+
+      
+      .sellers-table__tbody
+        mixin tr
+          .sellers-table__tr.seller-tr-js
+            .sellers-table__tr-top
+              .sellers-table__td.sellers-table__td_tarder.seller-td-js
+                .sellers-table__trader 
+                  .sellers-table__trader-name-wrap 
+                    .sellers-table__trader-name kujira1p...ce46v8
+                    .sellers-table__trader-rang Rang
+                      span 98% 
+
+                  .sellers-table__trader-info 
+                    .sellers-table__trader-trades 
+                      span 0 
+                      | trades
+                    .sellers-table__trader-rang Rang
+                      span 98% 
+
+                    .sellers-table__counter refresh in  
+                      span 20
+                      | s  
+
+              .sellers-table__td.sellers-table__td_hidden
+                .sellers-table__payment
+                  .sellers-table__payment-col
+                    .sellers-table__payment-name Wise
+                  
+                  .sellers-table__payment-col
+                    .sellers-table__counter refresh in  
+                      span 20
+                      | s
+
+                    p 1 axlUSDC = USD 1.04 
+
+              .sellers-table__td.sellers-table__td_price.seller-td-js
+                .sellers-table__price USD 1.05
+              
+              .sellers-table__td.sellers-table__td_trade-limit.seller-td-js
+                .sellers-table__trade-limit
+                  .sellers-table__trade-limit-label Trade limit
+                  .sellers-table__trade-limit-count 
+                    span 1000-1000011
+                    | axIUSDC 
+
+              .sellers-table__td.sellers-table__td_payment.seller-td-js
+                .sellers-table__payment
+                  .sellers-table__payment-item
+                    .sellers-table__payment-name Wise
+                  .sellers-table__payment-item.sellers-table__payment-item_cur
+                    .sellers-table__price USD 1.05
+                  .sellers-table__payment-item
+                    a(href="#").btn.btn_accent.seller-buy-js Buy
+
+            .sellers-table__tr-bottom
+              form(action="").sellers-table__form#table-form 
+                .input-wrap 
+                  .input-col 
+                    .input
+                      label(for="buy") I want to buy
+                      input#buy(type="text" name="buy" placeholder="axIUSDC 0")  
+                      .input__message axlUSDC 1000 - axlUSDC 10000 
+                
+                  .input-col 
+                    .input
+                      label(for="pay") I will pay
+                      input#pay(type="text" name="pay" placeholder="USD 0")  
+                      .input__message USD 1039.50 - USD 10395.00 
+                      
+                  .input-col 
+                    .input 
+                      label(for="telegram") Your Telegram username
+
+                        .input__info 
+                          .icon
+                            svg
+                              use(xlink:href='sprite.svg#questionmark')
+                          
+                          .input__info-window
+                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem accusamus rem tempora iste possimus. Ad.
+                            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, necessitatibus! 
+
+
+                      input#telegram(type="text" name="telegram" placeholder="@username")  
+
+                .sellers-table__form-bottom
+                  .sellers-table__form-bottom-col
+                    p Trade time limit
+                    span 6 hours
+                  .sellers-table__form-bottom-col
+                    .sellers-table__form-btn-wrap 
+                        .btn.btn_cancel.seller-cancel-js Cancel
+                        .btn.btn_accent.btn_disabled Open trade
+
+
+
+
+
+
+        +tr
+        +tr
+        +tr
+
+  include ../includes/pagination
+        
+        

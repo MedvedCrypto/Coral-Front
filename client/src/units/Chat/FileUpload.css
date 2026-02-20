@@ -1,0 +1,80 @@
+.file-upload {
+  position: relative;
+  width: 200px; /* Ширина контейнера */
+  margin: 8px auto; /* Центрируем с отступом */
+}
+
+.file-upload-label {
+  display: block;
+  background-color: #4caf50; /* Цвет фона кнопки */
+  color: white; /* Цвет текста */
+  padding: 10px; /* Отступы */
+  text-align: center; /* Выравнивание текста по центру */
+  border-radius: 5px; /* Закругленные углы */
+  cursor: pointer; /* Указатель при наведении */
+  transition: background-color 0.3s; /* Плавный переход цвета */
+  font-weight: 800;
+}
+
+.file-upload-label:hover {
+  background-color: #45a049; /* Цвет при наведении */
+}
+
+.file-upload-input {
+  display: none; /* Скрываем стандартный input */
+}
+
+.rrr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sendImage {
+  position: relative;
+  width: 200px; /* Ширина контейнера */
+  margin: 8px auto; /* Центрируем с отступом */
+}
+
+.sendImage span {
+  display: block;
+  background-color: #4caf50; /* Цвет фона кнопки */
+  color: white; /* Цвет текста */
+  padding: 10px; /* Отступы */
+  text-align: center; /* Выравнивание текста по центру */
+  border-radius: 5px; /* Закругленные углы */
+  cursor: pointer; /* Указатель при наведении */
+  transition: background-color 0.3s; /* Плавный переход цвета */
+  font-weight: 800;
+}
+
+.sendImage:hover span {
+  background-color: #45a049; /* Цвет при наведении */
+}
+
+.sendMsgBtn {
+  position: relative;
+  width: 200px; /* Ширина контейнера */
+  margin: 8px auto; /* Центрируем с отступом */
+}
+
+.sendMsgBtn span {
+  display: block;
+  background-color: #4caf50; /* Цвет фона кнопки */
+  color: white; /* Цвет текста */
+  padding: 10px; /* Отступы */
+  text-align: center; /* Выравнивание текста по центру */
+  border-radius: 5px; /* Закругленные углы */
+  cursor: pointer; /* Указатель при наведении */
+  transition: background-color 0.3s; /* Плавный переход цвета */
+  font-weight: 800;
+}
+
+.sendMsgBtn:hover span {
+  background-color: #45a049; /* Цвет при наведении */
+}
+
+.inputMSG{
+    margin: 8px;
+    min-width: 200px;
+}

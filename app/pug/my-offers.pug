@@ -1,0 +1,144 @@
+extends layouts/main
+
+block vars
+  - var description = '';
+  - var keywords= '';
+  - var ogtitle = '';
+  - var ogtype = '';
+  - var ogurl = '';
+  - var ogimg = '';
+
+block title
+  | My offers
+block main
+  .wrapper
+    .content
+      include includes/popup
+      include includes/header2
+      
+      .my-offers
+        .container
+          h2.title.title_h2.title_aic
+            | My Offers
+            a(href="#").btn.btn_gray.btn_centered.offer-popup-js
+              span Create offer
+              .icon
+                svg
+                  use(xlink:href='sprite.svg#plus')
+
+          .my-offers__list
+            mixin item
+              .my-offers__item
+                .my-offers__item-inner
+                  .my-offers__item-inner-wrap
+                    .my-offers__status 
+                      span Paused
+                    .my-offers__type Buying
+
+                    .my-offers__limits
+                      .my-offers__label Limits
+                      | 20-2000 axIUSDC 
+
+                    .my-offers__info
+                      p Bank Transfer (Instant SEPA), PayPal. Contact me <br> on telegram: @ForestMouse 
+                    
+                    .my-offers__currency-wrap
+                      div 
+                        .my-offers__currency EUR 0.95
+                        p 2% below market
+                      .btn.btn_gray.my-offers-edit-js Edit
+
+                  .my-offers__edit-form.edit.edit-js  
+                    .edit__top
+                      .edit__top-col
+                        .select.select_single 
+                          .select__inner 
+                            .select__selected.select-js
+                              input(type="hidden", name="status").select__input
+                              .select__col   
+                                .select__text.select-txt-js Pause
+                              .select__col   
+                                .icon
+                                  svg
+                                    use(xlink:href='sprite.svg#angle')  
+
+                            .select__dropdown.scroll-js
+                              each item in status
+                                .select__item.select-item-js(data-val=item.item data-text=item.item)
+                                  .select__col
+                                    .select__text=item.item 
+                      .edit__top-col                         
+                        .my-offers__type Buying
+                      .edit__top-col
+                        .my-offers__currency EUR 0.95
+
+                    form(action="") 
+                      .edit__form
+                        .edit__input-col
+                          .input
+                            label(for="min-amount") Min amount
+                            input#min-amount(type="text" name="Min amount" placeholder="USK 20" value="USK 20")  
+                            
+                        .edit__input-col
+                          .input
+                            label(for="max-amount") Max amount
+                            input#max-amount(type="text" name="Max amount" placeholder="USK 20" value="USK 20")  
+                
+                        .edit__input-col
+                          .select.select_single 
+                            .select__label Market price
+                            .select__inner 
+                              .select__selected.select-js
+                                input(type="hidden", name="crypto").select__input
+                                .select__col   
+                                  .select__text.select-txt-js Above
+                                .select__col   
+                                  .icon
+                                    svg
+                                      use(xlink:href='sprite.svg#angle')  
+
+                              .select__dropdown.scroll-js
+                                each item in price
+                                  .select__item.select-item-js(data-val=item.name data-text=item.name)
+                                    .select__col   
+                                      .select__text=item.name
+                                  
+                        .edit__input-col
+                          .input
+                            label(for="margin") Margin offeset
+                            input#margin(type="text" name="Nargin" placeholder="3%" value="3%")  
+                      
+                      .edit__form-bottom      
+                        //- .input
+                        //-   label(for="description") Edit offer description
+                        //-   textarea#description(name="description" placeholder="Edit offer description")
+                        //-     | Bank Transfer (Instant SEPA), PayPal. Contact me on telegram: @ForestMouse  
+                        include includes/select-payment
+                        .edit__form-bottom-btn-wrap 
+                          .btn.btn_cancel.my-offers-edit-cancel-js Cancel
+                          .btn.btn_accent.btn_centered Update
+
+            +item
+            +item
+            +item
+            +item
+            +item
+            
+
+            include includes/pagination
+                  
+              
+            
+
+
+
+
+    
+         
+
+
+      
+      
+    include includes/footer
+
+  include includes/scripts 

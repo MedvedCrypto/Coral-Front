@@ -1,0 +1,121 @@
+.select
+
+  &__label
+    margin-bottom: rem(15)
+    font-size: rem(16)
+    color: #C2C2C2
+    font-weight: 200
+
+  &__inner
+    position: relative
+
+  &__selected
+    @include aic-jfcsb
+    padding: 0 rem(15)
+    min-height: rem(44)
+    cursor: pointer
+    border-radius: rem(6)
+    background: #26262A
+    // box-shadow: 0 0 0 0.2px white
+
+    .icon
+      transition: $transition
+      fill: #CACACA
+      margin-left: rem(10)
+      max-width: rem(19)
+      min-width: rem(19)
+      height: rem(19)
+
+    &.active
+      border-radius: rem(6) rem(6) 0 0
+      // box-shadow: none
+
+      .icon
+        transform: rotate(180deg)
+
+      .select__img,
+      .select__text
+        opacity: 0.5
+
+  &__col
+    @include aic
+
+  &__img
+    max-width: rem(21)
+    min-width: rem(21)
+    margin-right: rem(15)
+    @include aic-jcc
+
+    img
+      width: 100%
+      // image-rendering: pixelated
+
+  &__text
+    font-size: rem(17)
+    font-weight: 700
+    color: white
+
+    &_txt-uppercase
+      text-transform: uppercase
+
+  &__dropdown
+    position: absolute
+    width: 100%
+    opacity: 0
+    pointer-events: none
+    top: 0
+    left: 0
+    transition: $transition
+    background: #26262A
+    // box-shadow: 0 0.2px 0 0.2px white
+    border-radius: 0 0 rem(6) rem(6)
+    max-height: rem(175)
+
+    &.active
+      opacity: 1
+      pointer-events: inherit
+      top: calc( 100% - 1px )
+      z-index: 1
+      // box-shadow: none
+
+  &__item
+    padding: rem(7) rem(15)
+    transition: $transition
+    @include aic-jfcsb
+    cursor: pointer
+
+    &:last-child
+      padding-bottom: rem(15)
+
+    &:hover
+      background: #414141
+
+  &__checkbox
+    span
+      max-width: rem(19)
+      min-width: rem(19)
+      height: rem(19)
+      border-radius: rem(3)
+      background: #575757
+      @include aic-jcc
+      transition: $transition
+
+      .icon
+        max-width: rem(19)
+        min-width: rem(19)
+        height: rem(19)
+
+        svg
+          fill: white
+          width: 100%
+          height: 100%
+
+    input
+      opacity: 0
+      position: absolute
+      pointer-events: none
+
+      &:checked
+        ~
+          span
+            background: $accent

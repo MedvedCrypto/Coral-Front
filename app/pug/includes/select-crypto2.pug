@@ -1,0 +1,22 @@
+.select.select_single 
+  .select__label I want to sell
+  .select__inner 
+    .select__selected.select-js
+      input(type="hidden", name="crypto").select__input
+      .select__col   
+        .select__img 
+          img(src="images/dist/axl.webp", alt="")
+        .select__text.select-txt-js axlUSDC
+      .select__col   
+        .icon
+          svg
+            use(xlink:href='sprite.svg#angle')  
+
+    .select__dropdown.scroll-js
+      each item in crypto
+        .select__item.select-item-js(data-val=item.name data-text=item.name)
+          .select__col   
+            .select__img 
+              img(src="images/dist/"+item.img+".webp", alt="").select-img-js
+            
+            .select__text=item.name

@@ -1,0 +1,28 @@
+.select.select_multiple 
+  .select__label Payment method
+  .select__inner 
+    .select__selected.select-js
+      .select__col   
+        .select__img 
+          img(src="images/dist/paypal.webp", alt="")
+        .select__text.select-txt-js PayPal
+      .select__col   
+        .icon
+          svg
+            use(xlink:href='sprite.svg#angle')  
+
+    .select__dropdown.scroll-js
+      each item in payments
+        label(for=item.pay).select__item
+          .select__col
+            .select__img 
+              img(src="images/dist/"+item.pay+".webp", alt="")
+            .select__text=item.name
+          
+          .select__col
+            .select__checkbox
+              input(type="checkbox" name=item.pay id=item.pay value=item.name)
+              span 
+                .icon
+                  svg
+                    use(xlink:href='sprite.svg#check')

@@ -1,0 +1,16 @@
+mixin empty(title, text, position, create, createText, classJS)
+  h2.title.title_h2.title_aic
+    if create
+      =title
+      a(href="#" class=classJS).btn.btn_gray.btn_centered
+        span=createText
+
+        .icon
+          svg
+            use(xlink:href='sprite.svg#plus')
+    else 
+      =title
+  .empty(class=position)
+    p=text
+
+

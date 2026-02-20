@@ -1,0 +1,126 @@
+extends layouts/main
+
+block vars
+  - var description = '';
+  - var keywords= '';
+  - var ogtitle = '';
+  - var ogtype = '';
+  - var ogurl = '';
+  - var ogimg = '';
+
+block title
+  | Buying steps
+block main
+  .wrapper
+    .content
+      include includes/header2
+
+      .steps
+        .container
+          h2.title.title_h2 Buying axlUSD from @username 
+          .steps__top
+            .steps__item
+              .steps__step.passed 
+                .steps__count 
+                  span 1 
+                  .icon
+                    svg
+                      use(xlink:href='sprite.svg#check2')
+                .steps__label Waiting for Funds
+
+            .steps__item
+              .steps__step.active 
+                .steps__count 
+                  span 2
+                .steps__label Waiting for Funds
+
+            .steps__item
+              .steps__step 
+                .steps__count 
+                  span 3
+                .steps__label Waiting for Funds
+
+            .steps__item.steps__item_time
+              div
+                .steps__label-mobile Waiting for payment
+                .steps__item-label time ramaining
+                .steps__time 05h 58m 39s
+
+          .steps__content   
+
+            .steps__content-col   
+              .steps__content-item
+                div
+                  .steps__contacts-top Contact information 
+                  .steps__contacts-text Open a chat with the other trader so you can exchange information about payment.
+                  a(href="#").steps__contacts-link.steps__contacts-link_tg 
+                    .icon
+                      svg
+                        use(xlink:href='sprite.svg#telegram')
+                    span Open chat    
+
+                .steps__contacts-bottom
+                  .steps__contacts-info 
+                    .steps__contacts-info-new new!  
+                    .steps__contacts-text Get notifications on Telegram using SeaShanty bot.
+
+                  a(href="#").steps__content-btn Register new alert
+                  .steps__contacts-powered-by Powered by 
+                    a(href="#") Capybora Labs
+
+
+            .steps__content-col   
+              .steps__content-item
+                .steps__content-item-col
+                  .steps__content-item-payments
+                    h2 Payment method
+                    span Wise
+
+                .steps__content-item-col
+                  .steps__content-item-price 
+                    .steps__content-price-wrap
+                      h2 Price 
+                      .steps__content-price-list
+                        .steps__content-price-item
+                          span 1 axlUSDC
+                          span EUR 0.94
+
+                  .steps__content-item-price 
+                    .steps__content-price-wrap
+                      h2 Transaction summary 
+                      .steps__content-price-list
+                        .steps__content-price-item
+                          span Selling
+                          span 2 axlUSDC
+                        .steps__content-price-item
+                          span Platform fee (0.5%)
+                          span 0.01 axlUSDC
+                        .steps__content-price-item
+                          span Total
+                          span 2.01 axlUSDC
+
+                        .steps__content-price-item.steps__content-price-item_total
+                          span You will receive
+                          span EUR 1.88
+
+
+
+              .steps__content-item
+                .steps__content-mark
+                  svg(width="43", height="16", viewBox="0 0 43 16", fill="none", xmlns="http://www.w3.org/2000/svg")
+                    path(d="M42.2071 8.70711C42.5976 8.31658 42.5976 7.68342 42.2071 7.29289L35.8431 0.928932C35.4526 0.538408 34.8195 0.538408 34.4289 0.928932C34.0384 1.31946 34.0384 1.95262 34.4289 2.34315L40.0858 8L34.4289 13.6569C34.0384 14.0474 34.0384 14.6805 34.4289 15.0711C34.8195 15.4616 35.4526 15.4616 35.8431 15.0711L42.2071 8.70711ZM0 9H41.5V7H0V9Z", fill="#F2284E")
+                  .icon(style="display: none")
+                    svg
+                      use(xlink:href='sprite.svg#check2')
+                  .steps__content-mark-col
+                    p Only press the mark as paid button after you made <br> the payment
+                    a(href="#").btn.btn_accent.btn_cetered Mark as paid 
+
+          .steps__text
+            p Please note that requesting to cancel the transaction could <br> impact on your reputation. 
+            a(href="#")  Request cancel
+
+
+    include includes/footer
+
+  include includes/scripts 

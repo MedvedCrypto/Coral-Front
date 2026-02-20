@@ -1,0 +1,31 @@
+.hero
+  margin-bottom: rem(30)
+  @include adaptiv('margin-top', 85, 40, 0)
+
+  @include xs
+    margin-top: 0
+    margin-bottom: rem(10)
+
+  &__inner
+    @include xs
+      display: flex
+      flex-direction: column-reverse
+
+  &__img
+    @include adaptiv('max-width', 555, 279, 0)
+    width: 100%
+    margin: auto
+    @include aic-jcc
+    width: 100%
+
+    @include xs
+      margin-bottom: rem(14)
+
+    img
+      width: 100%
+
+  .title
+    br
+      display: none
+      @media (max-width: 450px)
+        display: block

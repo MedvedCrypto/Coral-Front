@@ -1,0 +1,42 @@
+.footer
+	flex: 0 0 auto
+	@include adaptiv('padding-top', 40, 35, 0)
+	@include adaptiv('padding-bottom', 40, 35, 0)
+
+	@include sm
+		padding-bottom: 0
+
+	&__inner
+		@include jfcfe
+
+		@include xs
+			justify-content: center
+
+	&__links
+		display: none
+
+		@include sm
+			@include aistr
+
+	&__links-item
+		width: 50%
+		padding: rem(10)
+		min-height: rem(68)
+		@include aic-jcc
+		text-align: center
+		font-size: rem(16)
+		font-weight: 600
+		color: #C2C2C2
+		text-decoration: none
+		transition: $transition
+		margin-top: rem(35)
+
+		&:first-child
+			background: #26262A
+
+		&:last-child
+			background: #343434
+
+		&:hover
+			background: $accent
+			color: white

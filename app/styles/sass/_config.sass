@@ -1,0 +1,100 @@
+// USER VARIABLES SECTION
+
+$accent: #F2284E // Accent Color
+$fontsize: 16px // Body Font Size
+$tc: #333 // Text Color
+$lineheight: 1.65 // Document Line Height
+$userfont: Aileron // User Font Family
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+
+$wc: #fff
+$bc: #000
+$transition: all .3s
+
+// Bootstrap compatible gutter variable => $gutter
+// $grid-gutter-width: 30px
+// $gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+@import 'blocks/mixins/_flex'
+@import 'blocks/mixins/_rem'
+@import 'blocks/mixins/_media'
+@import 'node_modules/normalize.css/normalize'
+@import 'node_modules/overlayscrollbars/styles/overlayscrollbars'
+@import 'node_modules/aos/dist/aos'
+// @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+// @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/_utilities.scss' // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+  @font-face
+    font-family: $fname
+    font-style: $fstyle
+    font-weight: $fweight
+    src: url($furl) format('woff2')
+
+@include font('Aileron', normal, 200, '../fonts/Aileron-thin.woff2')
+@include font('Aileron', normal, 300, '../fonts/Aileron-light.woff2')
+@include font('Aileron', normal, 400, '../fonts/Aileron-regular.woff2')
+@include font('Aileron', normal, 600, '../fonts/Aileron-semibold.woff2')
+@include font('Aileron', normal, 700, '../fonts/Aileron-bold.woff2')
+
+// GENERAL CSS SETTINGS
+
+$maxWidth: 1920
+$maxWidthContainer: 840
+
+@mixin adaptiv($property, $startSize, $minSize, $type)
+  $addSize: $startSize - $minSize
+
+  @if $type==1
+    // Только если меньше контейнера
+    #{property}: $startSize + px
+
+    @media(max-width: #{$maxWidthContainer + px})
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}))
+
+  @else if type==2
+    // Только если больше контейнера
+    #{property}: $startSize + px
+
+    @media(max-width: #{$maxWidthContainer + px})
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}))
+
+  @else
+    // Всегда
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}))
+
+::placeholder
+  color: #666
+
+::selection
+  background-color: $accent
+  color: #fff
+
+input, textarea
+  outline: none
+  &:focus:required:invalid
+    border-color: red
+  &:required:valid
+    border-color: green
+
+body
+  background: #111116
+  font-family: $userfont
+  font-size: $fontsize
+  color: $tc
+  min-width: rem(320)
+  position: relative
+  overflow-x: hidden
+
+  
+
+.os-scrollbar-vertical,
+.os-scrollbar-horizontal  
+  .os-scrollbar-handle
+    background: rgba($accent, .4)

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pages list | Coral</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta name="theme-color" content="#F2284E">
+    <meta name="msapplication-navbutton-color" content="#F2284E">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#F2284E">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  </head>
+  <body>
+    <style>
+      .logo {
+        margin-bottom: 25px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+      }
+      .main {
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+      background-size: cover;
+      padding: 30px 0;
+      position: relative;
+      background-position: right top;
+      }
+      .main{
+      background: #111116;
+      }
+      
+      .wrap{
+        width: 375px 
+      }
+      
+      .list ul li{
+        position: relative;
+        padding-left: 20px;
+        list-style: none;
+        margin-top: 5px
+      }
+      .list ul li:before{
+        position: absolute;
+        content: '';
+        width: 12px;
+        height: 12px;
+        border: 1px solid white;
+        border-radius: 100%;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: all .3s;
+      }
+      .list ul li a{
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        transition: all .3s;
+      }
+      .list ul li:hover a{
+        color: #F2284E;
+      }
+      .list ul li:hover:before{
+        border-color: #F2284E;
+      }
+      
+    </style>
+    <div class="main">
+      <div class="wrap">
+        <div class="logo"><img src="images/dist/logo.svg" alt=""></div>
+        <div class="list">
+          <ul>
+            <li><a target="_blank" href="main.html">Main</a></li>
+            <li><a target="_blank" href="empty1.html">Open Trades | Nothing here yet</a></li>
+            <li><a target="_blank" href="empty2.html">Open Trades | You need to connect your wallet</a></li>
+            <li><a target="_blank" href="empty3.html">Open Trades | There are no trades here yet.</a></li>
+            <li><a target="_blank" href="empty4.html">My Offers | There are no offers available yet.</a></li>
+            <li><a target="_blank" href="open-trades.html">Open Trades</a></li>
+            <li><a target="_blank" href="my-offers.html">My Offers </a></li>
+            <li><a target="_blank" href="open-trades-history.html">Open Trades | history</a></li>
+            <li><a target="_blank" href="steps.html">Buying steps</a></li>
+            <li><a target="_blank" href="404.html">404</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  </body>
+</html>

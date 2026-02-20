@@ -1,0 +1,114 @@
+.trades
+  &__item
+    margin-bottom: rem(30)
+
+    &:last-child
+      margin-bottom: 0
+
+  &__item-inner
+    background: #26262A
+    border-radius: rem(7)
+    @include aistr
+    min-height: rem(119)
+    @include adaptiv('margin-bottom', 45, 30 , 0)
+    @include adaptiv('padding-top', 27, 19 , 0)
+    @include adaptiv('padding-bottom', 27, 19 , 0)
+    @include adaptiv('padding-left', 30, 19 , 0)
+    @include adaptiv('padding-right', 30, 19 , 0)
+
+    @include md
+      flex-wrap: wrap
+
+
+    .btn
+      height: auto
+      margin-left: rem(10)
+
+  &__col
+    border-right: rem(0.5) solid #7B7B7B
+    @include jcc
+    flex-direction: column
+    padding-right: rem(15)
+    @include adaptiv('padding-left', 54, 15 , 0)
+    @include adaptiv('min-width', 257, 185 , 0)
+
+    @include md  
+      width: 100%
+      padding-left: 0
+      padding-right: 0
+      border: none
+      margin-bottom: rem(32)
+
+      flex-direction: row
+      align-items: center
+      justify-content: space-between
+
+    &:first-child
+      padding-left: 0
+      min-width: rem(186)
+      @include adaptiv('padding-right', 33, 15 , 0)
+
+      @include md
+        border-bottom: rem(0.5) solid #7B7B7B
+        padding-bottom: rem(20)
+        margin-bottom: rem(20)
+        flex-direction: column
+        align-items: flex-start
+
+
+
+    &:last-child
+      border: none
+      flex-direction: row
+      align-items: center
+      justify-content: space-between
+      flex: 1
+      padding-right: 0
+
+      @include md
+        margin-bottom: 0
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        text-align: center
+
+      .btn
+        @include md
+          margin-left: 0
+          margin-top: rem(32)
+
+      .trades__item-content
+        @include md
+          font-size: rem(24)
+          margin-top: rem(7)
+
+
+
+
+    
+
+  &__item-name
+    margin-bottom: rem(15)
+    font-size: rem(20)
+    color: white
+    font-weight: 700
+
+  &__item-label
+    color: #B0B0B0
+    font-size: rem(16)
+    font-weight: 400
+    margin-bottom: rem(18)
+    
+    @include md
+      margin-bottom: 0
+
+  &__item-user
+    margin-bottom: 0
+
+  &__item-content
+    color: white
+    font-weight: 700
+    font-size: rem(16)
+    &_accent
+      color: $accent
+

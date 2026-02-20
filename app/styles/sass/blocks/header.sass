@@ -1,0 +1,57 @@
+.header
+  @include adaptiv('padding-top', 42, 20, 0)
+  margin-bottom: rem(30)
+
+  &__inner
+    @include aic-jfcsb
+
+  &__logo
+    @include adaptiv('max-width', 256, 113, 0)
+    width: 100%
+    @include aic-jcc
+
+    img
+      width: 100%
+
+  &__col
+
+    &:last-child
+      @include aic
+
+      .btn
+        margin-left: rem(10)
+
+  &__btn-wrap
+    @include aic
+
+    .btn
+      min-width: rem(160)
+      @include adaptiv('min-width', 160, 130, 0)
+
+      @include sm
+        display: none
+
+      &_connect,
+      &_user
+        @include sm
+          display: flex
+          min-height: rem(28)
+
+        .icon  
+          @include sm
+            min-width: rem(16)
+            height: rem(16)
+
+      &_connect
+        @include sm
+          font-size: rem(13.75)
+          min-width: rem(110)
+        
+        
+
+      &_user
+        @include sm
+          font-size: rem(12.58)
+          max-width: rem(100)
+          min-width: rem(100)
+          padding: 0 rem(8)

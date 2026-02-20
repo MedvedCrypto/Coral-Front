@@ -1,0 +1,57 @@
+.table-wrap
+  @include adaptiv('margin-top', 45, 30 , 0)
+.table
+  
+  padding-bottom: 20px
+  width: 100%
+
+  @include md
+    max-width: rem(930)
+
+  table
+    border-radius: rem(7)
+    background: #26262A
+    width: 100%
+    border-spacing: 0
+    @include adaptiv('padding', 30, 15, 0)
+    
+    @include md
+      min-width: rem(930)
+    
+    th
+      color: #aaa
+      font-weight: 600
+      border-bottom: 0.5px solid #7B7B7B
+      text-align: left
+      @include adaptiv('padding-right', 12, 6, 0)
+      @include adaptiv('padding-bottom', 20, 10, 0)
+      @include adaptiv('padding-left', 12, 6, 0)
+      @include adaptiv('font-size', 20, 14, 0)
+      
+      &:first-child
+        @include adaptiv('padding-left', 12, 6, 0)
+        
+
+    td
+      color: white
+      font-size: rem(16)
+      font-weight: 600
+      
+      @include adaptiv('padding-top', 16, 5, 0)
+      @include adaptiv('padding-bottom', 16, 5, 0)
+      @include adaptiv('padding-left', 12, 6, 0)
+      @include adaptiv('padding-right', 12, 6, 0)
+      
+      @include adaptiv('font-size', 16, 13, 0)
+
+  &__td-inner
+    @include aic
+    .icon
+      max-width: rem(21)
+      min-width: rem(21)
+      height: rem(21)
+      margin-right: rem(10)
+      fill: white
+
+.table-js
+  display: none

@@ -1,0 +1,47 @@
+.switch
+  &_centered
+    @include jcc
+    
+  &__inner
+    @include aistr
+    display: inline-flex
+    // box-shadow: 0 0 0 0.2px white
+    overflow: hidden
+    position: relative
+    background: #292C30
+    @include adaptiv('border-radius', 8, 7, 0)
+
+  &__item 
+    @include aic-jcc
+    text-align: center
+    color: #838383
+    font-weight: 700
+    transition: $transition
+    @include adaptiv('font-size', 25, 20, 0)
+    @include adaptiv('min-width', 168, 140, 0)
+    @include adaptiv('max-width', 168, 140, 0)
+    @include adaptiv('min-height', 69, 57 , 0)
+    padding: rem(9) 
+    cursor: pointer
+    position: relative
+
+    &::after
+      position: absolute
+      content: ''
+      top: 0
+      left: 100%
+      height: 100%
+      box-shadow: 0 0 0 0.1px white
+
+    &:last-child
+      &::after
+        display: none
+
+    &.active
+      color: $accent 
+      pointer-events: none
+
+  &__backlight    
+    position: absolute
+    background: #393A3D
+    transition: $transition

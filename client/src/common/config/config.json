@@ -1,0 +1,204 @@
+{
+  "CHAINS": [
+    {
+      "NAME": "thorchain",
+      "PREFIX": "sthor",
+      "OPTIONS": [
+        {
+          "TYPE": "test",
+          "DENOM": "rune",
+          "CHAIN_ID": "dev-1",
+          "RPC_LIST": [
+            "https://thornode-devnet-rpc.bryanlabs.net:443"
+          ],
+          "GAS_PRICE_AMOUNT": 0.02,
+          "STORE_CODE_GAS_MULTIPLIER": 20,
+          "CONTRACTS": [
+            {
+              "WASM": "hub.wasm",
+              "LABEL": "hub",
+              "PERMISSION": [
+                "sthor1uge2pxk23nwyhceqcnrqql4f6pcadlwj8hffl6"
+              ],
+              "INIT_MSG": "{\"treasury\":\"sthor1jdlyax3z8duzz4fxndda6edh5yea8ms26t2jnx\",\"judge_list\":[\"sthor13sy0txd055g8u4y5uuxwpc97pz49yqnp9uqkhl\"]}",
+              "MIGRATE_MSG": "{\"version\":\"1.0.0\"}",
+              "UPDATE_MSG": "{\"update_common_config\":{\"trade_expiration_timer\":3600,\"trade_dispute_timer\":3600,\"join_dispute_timer\":3600,\"active_offers_limit\":2,\"active_trades_limit\":2,\"stablecoin\":{\"token\":{\"cw20\":{\"address\":\"sthor1pndh3u4jl95zppjdf58lk9g5ychszefrt0js9mxlmup06s3w7u0scfz4gw\"}},\"decimals\":6},\"trade_fee\":{\"base\":\"0\",\"rate\":\"0.01\"},\"dispute_fee\":{\"base\":\"0\",\"rate\":\"0.04\"},\"trade_limit\":{\"min\":\"10000000\",\"max\":\"900000000\"},\"chat_max_length\":30,\"chat_max_symbols_per_msg\":100,\"chat_max_msg_sequence\":3,\"dispute_quorum\":1}}",
+              "CODE": 66,
+              "ADDRESS": "sthor12fndxkgv6udg729rgsc088mju6f9chhyp3xn42tue3n6zh737g6q79d0xg"
+            },
+            {
+              "WASM": "offer.wasm",
+              "LABEL": "offer",
+              "PERMISSION": [
+                "sthor1uge2pxk23nwyhceqcnrqql4f6pcadlwj8hffl6"
+              ],
+              "INIT_MSG": "{}",
+              "MIGRATE_MSG": "{\"version\":\"1.0.0\"}",
+              "UPDATE_MSG": "{}",
+              "CODE": 67,
+              "ADDRESS": "sthor1xpq84jaz9dkehvqjw6pccphe5fkzdmn8ngxg4jk73ftj5mjgwqdsu522sg"
+            },
+            {
+              "WASM": "profile.wasm",
+              "LABEL": "profile",
+              "PERMISSION": [
+                "sthor1uge2pxk23nwyhceqcnrqql4f6pcadlwj8hffl6"
+              ],
+              "INIT_MSG": "{}",
+              "MIGRATE_MSG": "{\"version\":\"1.0.0\"}",
+              "UPDATE_MSG": "{}",
+              "CODE": 68,
+              "ADDRESS": "sthor1v4mvcfcc6dkc9n2h7yde4am3ah6pctutwz0ad3mmmz4kdgx3q09qenxtq2"
+            },
+            {
+              "WASM": "trade.wasm",
+              "LABEL": "trade",
+              "PERMISSION": [
+                "sthor1uge2pxk23nwyhceqcnrqql4f6pcadlwj8hffl6"
+              ],
+              "INIT_MSG": "{}",
+              "MIGRATE_MSG": "{\"version\":\"1.0.0\"}",
+              "UPDATE_MSG": "{}",
+              "CODE": 69,
+              "ADDRESS": "sthor1kggfd6z0ad2k9q8v24f7ftxyqush8fp9xku9nyrjcs2wv0e4kyps60aw9f"
+            },
+            {
+              "WASM": "hash_generator.wasm",
+              "LABEL": "hash_generator",
+              "PERMISSION": [
+                "sthor1uge2pxk23nwyhceqcnrqql4f6pcadlwj8hffl6"
+              ],
+              "INIT_MSG": "{}",
+              "MIGRATE_MSG": "{\"version\":\"1.0.0\"}",
+              "UPDATE_MSG": "{}",
+              "CODE": 70,
+              "ADDRESS": "sthor1xrmrldxnqzvt87n6h8pegxkzn3qhnw77v0rdarg9rw4ar6vzu0lsrqn7rd"
+            },
+            {
+              "WASM": "chat.wasm",
+              "LABEL": "chat",
+              "PERMISSION": [
+                "sthor1uge2pxk23nwyhceqcnrqql4f6pcadlwj8hffl6"
+              ],
+              "INIT_MSG": "{\"hash_generator\":\"sthor1xrmrldxnqzvt87n6h8pegxkzn3qhnw77v0rdarg9rw4ar6vzu0lsrqn7rd\"}",
+              "MIGRATE_MSG": "{\"version\":\"1.0.0\"}",
+              "UPDATE_MSG": "{}",
+              "CODE": 71,
+              "ADDRESS": "sthor1kzq8fc0faklc58mzlwlyhnmx4pj3juv87rvu2gxjk5j3g9zp8y2s6qftcq"
+            },
+            {
+              "WASM": "justice.wasm",
+              "LABEL": "justice",
+              "PERMISSION": [
+                "sthor1uge2pxk23nwyhceqcnrqql4f6pcadlwj8hffl6"
+              ],
+              "INIT_MSG": "{}",
+              "MIGRATE_MSG": "{\"version\":\"1.0.0\"}",
+              "UPDATE_MSG": "{}",
+              "CODE": 72,
+              "ADDRESS": "sthor144ag5my0pzujk7shxcc904cxyxpdx87xzfd7m58yq3gs4xszl3mqks6jng"
+            }
+          ],
+          "IBC": []
+        }
+      ]
+    },
+    {
+      "NAME": "kujira",
+      "PREFIX": "kujira",
+      "OPTIONS": [
+        {
+          "TYPE": "test",
+          "DENOM": "ukuji",
+          "CHAIN_ID": "harpoon-4",
+          "RPC_LIST": [
+            "https://kujira-testnet-rpc.polkachu.com:443"
+          ],
+          "GAS_PRICE_AMOUNT": 0.01,
+          "STORE_CODE_GAS_MULTIPLIER": 20,
+          "CONTRACTS": [
+            {
+              "WASM": "hub.wasm",
+              "LABEL": "hub",
+              "PERMISSION": [
+                "kujira1f37v0rdvrred27tlqqcpkrqpzfv6ddr2c3t8y8",
+                "kujira1hvp3q00ypzrurd46h7c7c3hu86tx9uf84up6a2"
+              ],
+              "INIT_MSG": "{\"admin\":\"kujira1f37v0rdvrred27tlqqcpkrqpzfv6ddr2c3t8y8\"}",
+              "MIGRATE_MSG": "{\"version\":\"1.0.0\"}",
+              "UPDATE_MSG": "{\"update_common_config\":{\"stablecoin\":{\"token\":{\"native\":{\"denom\":\"factory/kujira1r85reqy6h0lu02vyz0hnzhv5whsns55gdt4w0d7ft87utzk7u0wqr4ssll/uusk\"}},\"decimals\":6},\"active_offers_limit\":4,\"active_trades_limit\":20,\"dispute_fee\":{\"base\":\"0\",\"rate\":\"0.01\"},\"trade_fee\":{\"base\":\"0\",\"rate\":\"0.01\"},\"trade_expiration_timer\":3600,\"trade_dispute_timer\":3600,\"trade_limit\":{\"min\":\"100\",\"max\":\"10000\"}}}",
+              "CODE": 3836,
+              "ADDRESS": "kujira19uugwj4shgvzvzqje44z9ltepdprzrv4pet4ltntsc493xp58hes38dwqg"
+            },
+            {
+              "WASM": "offer.wasm",
+              "LABEL": "offer",
+              "PERMISSION": [
+                "kujira1f37v0rdvrred27tlqqcpkrqpzfv6ddr2c3t8y8",
+                "kujira1hvp3q00ypzrurd46h7c7c3hu86tx9uf84up6a2"
+              ],
+              "INIT_MSG": "{\"admin_addr\":\"kujira1f37v0rdvrred27tlqqcpkrqpzfv6ddr2c3t8y8\"}",
+              "MIGRATE_MSG": "{\"version\":\"1.0.0\"}",
+              "UPDATE_MSG": "{}",
+              "CODE": 3769,
+              "ADDRESS": "kujira1nxh38qepgjnx5lt3xq2fc9w6f5ush4m3d2jsq3hfaw6kyk7f7usqrp6nxk"
+            },
+            {
+              "WASM": "profile.wasm",
+              "LABEL": "profile",
+              "PERMISSION": [
+                "kujira1f37v0rdvrred27tlqqcpkrqpzfv6ddr2c3t8y8",
+                "kujira1hvp3q00ypzrurd46h7c7c3hu86tx9uf84up6a2"
+              ],
+              "INIT_MSG": "{\"admin_addr\":\"kujira1f37v0rdvrred27tlqqcpkrqpzfv6ddr2c3t8y8\"}",
+              "MIGRATE_MSG": "{\"version\":\"1.0.0\"}",
+              "UPDATE_MSG": "{}",
+              "CODE": 3770,
+              "ADDRESS": "kujira1lx6c568vgktj0vten0645wh5dc2l5a2grnjlh5lkvj3m45rh755q7fjaf7"
+            },
+            {
+              "WASM": "trade.wasm",
+              "LABEL": "trade",
+              "PERMISSION": [
+                "kujira1f37v0rdvrred27tlqqcpkrqpzfv6ddr2c3t8y8",
+                "kujira1hvp3q00ypzrurd46h7c7c3hu86tx9uf84up6a2"
+              ],
+              "INIT_MSG": "{\"admin_addr\":\"kujira1f37v0rdvrred27tlqqcpkrqpzfv6ddr2c3t8y8\"}",
+              "MIGRATE_MSG": "{\"version\":\"1.0.0\"}",
+              "UPDATE_MSG": "{}",
+              "CODE": 3771,
+              "ADDRESS": "kujira12a9znggksz9v4nzywrk99u8xrz6umydkemqug7mqtc9grrk5fduqvvt8tx"
+            },
+            {
+              "WASM": "hash_generator.wasm",
+              "LABEL": "hash_generator",
+              "PERMISSION": [
+                "kujira1f37v0rdvrred27tlqqcpkrqpzfv6ddr2c3t8y8",
+                "kujira1hvp3q00ypzrurd46h7c7c3hu86tx9uf84up6a2"
+              ],
+              "INIT_MSG": "{}",
+              "MIGRATE_MSG": "{\"version\":\"1.0.0\"}",
+              "UPDATE_MSG": "{}",
+              "CODE": 3848,
+              "ADDRESS": "kujira1ksvc4r67ygn2468d95f38eq6fxwlh4wgsf60xgymh94qs9pa7qlqnv4m5l"
+            },
+            {
+              "WASM": "chat.wasm",
+              "LABEL": "chat",
+              "PERMISSION": [
+                "kujira1f37v0rdvrred27tlqqcpkrqpzfv6ddr2c3t8y8",
+                "kujira1hvp3q00ypzrurd46h7c7c3hu86tx9uf84up6a2"
+              ],
+              "INIT_MSG": "{\"hash_generator\":\"!OPTIONS[CHAIN_ID=harpoon-4]|CONTRACTS[LABEL=hash_generator]|ADDRESS!\"}",
+              "MIGRATE_MSG": "{\"version\":\"1.0.0\"}",
+              "UPDATE_MSG": "{}",
+              "CODE": 3850,
+              "ADDRESS": "kujira1z7850x62rcdyezl328z5dyz82gt3pttqnq23zn6ayufe629vq62q8x9sky"
+            }
+          ],
+          "IBC": []
+        }
+      ]
+    }
+  ]
+}

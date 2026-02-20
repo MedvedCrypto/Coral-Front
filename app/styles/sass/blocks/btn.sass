@@ -1,0 +1,119 @@
+.btn
+  @include adaptiv('font-size', 18, 15, 0)
+  @include adaptiv('border-radius', 8, 5, 0)
+  @include adaptiv('padding-left', 17, 12, 0)
+  @include adaptiv('padding-right', 17, 12, 0)
+  @include adaptiv('min-height', 40, 35, 0)
+  @include aic
+  display: inline-flex
+  font-weight: 600
+  text-align: center
+  text-decoration: none
+  border: none
+  outline: none
+  cursor: pointer
+  transition: $transition
+  line-height: 0
+  
+  .icon
+    @include adaptiv('margin-right', 10, 7, 0)
+    @include adaptiv('max-width', 24, 18, 0)
+    @include adaptiv('min-width', 24, 18, 0)
+    @include adaptiv('height', 24, 18, 0)
+    
+
+  &_accent
+    background: $accent
+    color: white
+    border-color: $accent
+
+    &:hover
+      background: #2e3035
+      color: $accent
+  
+  &_gray
+    background: #2E3035
+    color: $accent
+    padding: 0 rem(10)
+    
+    .icon
+      fill: $accent
+      margin-left: rem(5)
+
+      &:last-child
+        margin-right: 0
+
+  &_accent-bordered
+    background: none
+    box-shadow: 0 0 0 0.5px $accent
+    color: $accent
+    display: flex
+    flex-direction: row-reverse
+
+    .icon
+      margin-right: 0
+      margin-left: rem(10)
+
+  &_bordered
+    background: none
+    box-shadow: 0 0 0 0.5px #C2C2C2
+    padding: 0 rem(10)
+    color: #C2C2C2
+    @include adaptiv('font-size', 15, 12, 0)
+    
+    .icon
+      svg
+        fill: #C2C2C2
+
+    &:hover
+      border-color: $accent
+      background: #2e3035
+
+  &_disabled
+    background: #2E3035
+    color: #5B5B5B
+    pointer-events: none
+
+  &_cancel
+    background: none
+    outline: none
+    border: none
+    color: white
+    margin: 0
+    padding: 0
+    font-size: rem(14)
+
+    &:hover
+      color: $accent
+
+  &_my-history
+    .icon
+      margin-right: rem(17)
+
+  &_connect
+    @include adaptiv('font-size', 20, 16, 0)
+    
+    .icon
+      transition: $transition
+      @include adaptiv('margin-right', 13, 13, 0)
+
+      &:nth-child(2)
+        position: absolute
+        opacity: 0
+        pointer-events: none
+
+    &:hover
+      .icon
+        &:first-child
+          position: absolute
+          opacity: 0
+          pointer-events: none
+
+        &:nth-child(2)
+          position: relative
+          opacity: 1
+          pointer-events: inherit
+
+  &_centered
+    justify-content: center     
+       

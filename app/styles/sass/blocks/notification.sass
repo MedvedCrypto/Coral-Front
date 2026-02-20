@@ -1,0 +1,174 @@
+.notification
+  position: relative
+
+  &__inner
+    background: #26262A
+    max-width: rem(37)
+    min-width: rem(37)
+    height: rem(37)
+    @include aic-jcc
+    border-radius: 100%
+    cursor: pointer
+    position: relative
+
+    .icon
+      transition: $transition
+
+      svg
+        fill: #ECECEC
+
+    &:hover
+      .icon
+        animation: bellring 1.4s ease
+
+    @keyframes bellring
+      0%
+        transform: rotate(0)
+      10%
+        transform: rotate(5deg)
+      20%
+        transform: rotate(-5deg)
+      30%
+        transform: rotate(4deg)
+      40%
+        transform: rotate(-4deg)
+      50%
+        transform: rotate(2deg)
+      60%
+        transform: rotate(-2deg)
+      70%
+        transform: rotate(1deg)
+      80%
+        transform: rotate(0)
+      100%
+        transform: rotate(0)
+
+  &__count
+    min-width: rem(12)
+    height: rem(12)
+    background: $accent
+    color: white
+    font-size: rem(7.2)
+    font-weight: 600
+    line-height: 0
+    @include aic-jcc
+    text-align: center
+    border-radius: rem(6)
+    padding: 0 rem(3)
+    position: absolute
+    top: 0
+    right: 0
+
+  &__title
+    color: white
+
+  &__dropdown
+    min-width: rem(335)
+    background: #282C2F
+    border-radius: rem(8)
+    position: absolute
+    left: 0
+    top: 100%
+    z-index: 3
+    overflow: hidden
+    opacity: 0
+    pointer-events: none
+    transition: $transition
+
+    @include sm
+      left: auto
+      right: 0
+
+    @include xs
+      position: fixed
+      z-index: 9
+      top: 0
+      right: auto
+      left: 50%
+      transform: translateX(-50%)
+      @include adaptiv('min-width', 335, 290, 0)
+
+    &.active
+      top: calc( 100% + 26px )
+      opacity: 1
+      pointer-events: inherit
+
+      @include xs
+        top: rem(83)
+
+  &__dropdown-top
+    padding: 0 rem(15)
+    
+
+  &__dropdown-top-inner
+    border-bottom: rem(1) solid #7B7B7B
+    @include aic-jfcsb
+    padding: rem(15) 0
+
+    @include xs
+      padding: rem(15) 0 rem(10) 0
+
+  &__mark
+    color: #7b7b7b
+    font-size: rem(10)
+    line-height: rem(12)
+    font-weight: 600
+    text-decoration: underline
+    transition: $transition
+
+    &:hover
+      color: $accent
+
+  &__list
+    max-height: rem(256)
+
+    @include xs
+      max-height: rem(350)
+
+
+  &__item
+    @include aic-jfcsb
+    text-decoration: none
+    transition: $transition
+    padding: rem(7) rem(15)
+
+    &:first-child
+      padding-top: rem(15)
+
+    &:last-child
+      margin-bottom: 0
+      padding-bottom: rem(15)
+
+    .icon
+      max-width: rem(15)
+      min-width: rem(15)
+      height: rem(15)
+      margin-right: rem(10)
+      fill: $accent
+
+    &:hover
+      background: #414141
+
+  &__item-col
+    &:first-child
+      @include aic
+
+  &__item-label,
+  &__item-time
+    font-weight: 600
+    font-size: rem(13)
+    @include adaptiv('line-height', 15, 13, 0)
+    color: white
+
+  &__item-time
+    margin-left: rem(5)
+
+  &__item-label
+    @include adaptiv('font-size', 13, 11, 0)
+    @include adaptiv('margin-bottom', 7, 3, 0)
+
+  &__item-sublabel
+    font-weight: 300
+    @include adaptiv('font-size', 10, 8, 0)
+    line-height: rem(12)
+    color: white

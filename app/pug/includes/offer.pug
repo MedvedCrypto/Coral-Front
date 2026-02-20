@@ -1,0 +1,21 @@
+.offer 
+  .container 
+    h2.title.title_h2.title_centered Top offers from the community
+    .switch.switch_centered.switch-js
+      .switch__inner
+        .switch__backlight.switch-backlight-js  
+        .switch__item.active Buy  
+        .switch__item Sell
+
+    .offer__select
+      .offer__input-select 
+        .offer__input-label Crypto
+        .offer__input-inner 
+          input(type="text" placeholder="Enter amount")
+          include ../includes/select-crypto
+
+      include ../includes/select-currency
+      include ../includes/select-payment
+      
+      
+      

@@ -1,0 +1,90 @@
+.title
+  font-weight: 600
+  color: white
+
+  .btn
+    margin-left: rem(20)
+    @include xs
+      min-height: rem(30)
+      font-size: rem(14)
+    
+  &_centered
+    text-align: center
+  
+  &_aic
+    @include aic
+
+  &_h1
+    @include adaptiv('font-size', 48, 34, 0)
+    @include adaptiv('line-height', 58, 40, 0)
+    @include adaptiv('margin-bottom', 15, 12, 0)
+  
+  &_h2
+    @include adaptiv('font-size', 32, 16, 0)
+    @include adaptiv('line-height', 38, 19, 0)
+    @include adaptiv('margin-bottom', 15, 10, 0)
+
+  
+  &__backlight
+    position: relative
+    display: inline-flex
+    padding: 0 rem(5)
+    margin-left: -5px
+    
+    span
+      position: relative
+      z-index: 2
+      display: inline-block
+      transition: $transition
+      
+
+    &::before,
+    &::after
+      position: absolute
+      content: ''
+      left: 0
+      top: 0
+      opacity: 0
+      transition: $transition
+      height: 100%
+
+    &::before
+      width: 100%
+      background: linear-gradient(90deg, #f2284d3d 0%, rgba(242, 40, 77, 0) 95%)
+      z-index: 0
+      transform: translateX(60%)
+    
+    &::after
+      width: rem(1)
+      background: $accent
+      opacity: 0
+      transition-delay: .2s
+
+    &.active
+      &::before,
+      &::after
+        transform: none
+        opacity: 1    
+
+      span
+        color: $accent  
+    
+.subtitle
+  color: white
+  font-weight: 300
+  @include adaptiv('font-size', 32, 16, 0)
+  @include adaptiv('line-height', 43, 21, 0)
+  @include adaptiv('margin-bottom', 15, 10, 0)
+  letter-spacing: 0.65px
+  
+  span
+    font-weight: 600
+    color: $accent
+
+  br
+    @include sm
+      display: none  
+    
+  &_centered
+    text-align: center
+
