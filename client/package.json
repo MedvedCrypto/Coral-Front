@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@keplr-wallet/cosmos": "0.12.279",
     "@chain-registry/keplr": "^1.25.1",
     "@chain-registry/types": "^0.17.0",
     "@cosmjs/cosmwasm-stargate": "^0.32.2",
