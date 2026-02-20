@@ -19,9 +19,7 @@ export default defineConfig({
       protocolImports: true,
     }),
     react({
-      // Явно указываем использовать новый JSX трансформатор
       jsxRuntime: 'automatic',
-      // Исключаем определенные модули из обработки
       exclude: /node_modules\/.*(?<!\.test\.)[jt]sx?$/,
     }),
     {
@@ -57,34 +55,50 @@ export default defineConfig({
   ],
   build: {
     target: "es2022",
-    // Добавляем настройки для CommonJS
     commonjsOptions: {
       include: [/node_modules/],
       extensions: ['.js', '.cjs'],
       strictRequires: true,
       transformMixedEsModules: true,
+      // Добавляем специальную обработку для проблемных пакетов
+      defaultIsModuleExports: true,
+      requireReturnsDefault: 'auto',
     },
     rollupOptions: {
-      // Явно указываем внешние зависимости для React
       external: [],
       output: {
         manualChunks: undefined,
+        // Добавляем обработку для commonjs
+        interop: 'auto',
       },
     },
   },
-  // Оптимизация зависимостей
   optimizeDeps: {
     include: [
       'react',
       'react-dom',
       'react/jsx-runtime',
+      'react-router-dom',
+      '@keplr-wallet/cosmos',
+      '@chain-registry/keplr',
     ],
     esbuildOptions: {
       target: 'es2022',
+      // Добавляем глобальные переменные
+      define: {
+        global: 'globalThis',
+      },
     },
   },
-  // Разрешение модулей
   resolve: {
-    dedupe: ['react', 'react-dom'],
+    dedupe: ['react', 'react-dom', '@keplr-wallet/cosmos'],
+    // Добавляем алиасы для CommonJS пакетов
+    alias: {
+      '@keplr-wallet/cosmos': '@keplr-wallet/cosmos/build/index.js',
+    },
+  },
+  // Добавляем глобальные переменные
+  define: {
+    global: 'globalThis',
   },
 });
