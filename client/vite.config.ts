@@ -90,13 +90,12 @@ export default defineConfig({
       },
     },
   },
-  resolve: {
-    dedupe: ['react', 'react-dom', '@keplr-wallet/cosmos'],
-    // Добавляем алиасы для CommonJS пакетов
-    alias: {
-      '@keplr-wallet/cosmos': '@keplr-wallet/cosmos/build/index.js',
-    },
+resolve: {
+  alias: {
+    '@keplr-wallet/cosmos': '@keplr-wallet/cosmos/build/index.js', // keep if needed
+    '@keplr-wallet/cosmos/build/index.js': '@keplr-wallet/cosmos/build/bech32/index.js', // override the barrel
   },
+},
   // Добавляем глобальные переменные
   define: {
     global: 'globalThis',
