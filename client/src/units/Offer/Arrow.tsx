@@ -1,5 +1,5 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
-import sprite from "../../images/sprite.svg";
+import sprite from "/images/sprite.svg";
 
 
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import sprite from "../../images/sprite.svg";
+import sprite from "/images/sprite.svg";
 import "../js/app.min.js";
 import $ from "jquery"; // Импортируем jQuery
 

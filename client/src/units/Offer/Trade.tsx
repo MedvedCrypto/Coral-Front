@@ -2,7 +2,7 @@ import React, { useCallback, useContext, useEffect, useState } from "react";
 import "../js/app.min.js";
 import "../../css/style.css";
 import TxHashContext from "./../context/txHash.tsx";
-import sprite from "../../images/sprite.svg";
+import sprite from "/images/sprite.svg";
 import { useParams } from "react-router-dom";
 import {
   btnTradeFundEscrow,

@@ -9,9 +9,9 @@ import "../css/style.css";
 import TxHashContext from "./context/txHash.tsx";
 
 
-import PayPal from "../images/dist/paypal.webp";
-import Wise from "../images/dist/wise.webp";
-import Bank from "../images/dist/bank.webp";
+import PayPal from "/images/dist/paypal.webp";
+import Wise from "/images/dist/wise.webp";
+import Bank from "/images/dist/bank.webp";
 
 import Offer from "./Buy/Offer.tsx";
 import Crypto from "./Buy/Crypto.tsx";

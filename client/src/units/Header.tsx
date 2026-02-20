@@ -6,9 +6,9 @@ import $ from "jquery"; // Импортируем jQuery
 
 import ModlHelp from "./Modl2/ModlHelp";
 
-import logo from "../images/src/logo.svg";
+import logo from "/images/src/logo.svg";
 
-import sprite from "../images/sprite.svg";
+import sprite from "/images/sprite.svg";
 import { useLocation } from "react-router-dom";
 
 interface Wallet {

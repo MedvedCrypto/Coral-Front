@@ -6,7 +6,7 @@ import MyOffers from "./units/MyOffers/MyOffers.tsx";
 import Trade from "./units/Offer/Trade.tsx";
 import Chat from "./units/Chat/Chat.tsx";
 import TradesList from "./units/Offer/openTrades.tsx";
-import sprite from "./public/images/sprite.svg";
+import sprite from "/images/sprite.svg";
 
 import HeaderSiteDesktop from "./units/Header.tsx";
 import { TxHashProvider } from "./units/context/txHash.tsx";

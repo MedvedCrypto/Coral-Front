@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import TradesCount from "./TradesCount";
 import TraderRang from "./Rang";
 import { NumericFormat } from "react-number-format";
-import sprite from "../../images/sprite.svg";
+import sprite from "/images/sprite.svg";
 import $ from "jquery"; // Импортируем jQuery
 
 const denom = 1_000_000;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TradesCount from "./TradesCount";
 import TraderRang from "./Rang";
 import { NumericFormat } from "react-number-format";
-import sprite from "../../images/sprite.svg";
+import sprite from "/images/sprite.svg";
 
 interface TraderProps {
   fiatOptions: any[];

@@ -1,6 +1,6 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import TxHashContext from "./../context/txHash.tsx";
-import sprite from "../../images/sprite.svg";
+import sprite from "/images/sprite.svg";
 import {
   btnAcceptTradeRequest,
   btnCancelTradeRequest,

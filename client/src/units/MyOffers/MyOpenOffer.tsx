@@ -1,11 +1,11 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import $, { parseJSON } from "jquery";
-import sprite from "../../images/sprite.svg";
+import sprite from "/images/sprite.svg";
 import TxHashContext from "./../context/txHash.tsx";
 import { btnPauseOrArchiveOffer, btnUpdateOffer } from "../buttons/btnLend.ts";
 import { OfferState } from "../../common/codegen/Offer.types.ts";
 import { NumericFormat } from "react-number-format";
-import bankImg from "../../images/dist/bank.webp";
+import bankImg from "/images/dist/bank.webp";
 // import "../js/app.min.js";
 
 

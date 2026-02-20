@@ -5,7 +5,7 @@ import { NumericFormat } from "react-number-format";
 import "../../css/style.css";
 import TxHashContext from "./../context/txHash.tsx";
 
-import Bank from "../../images/dist/bank.webp";
+import Bank from "/images/dist/bank.webp";
 
 import MyOpenOffer from "./MyOpenOffer.tsx";
 
@@ -14,7 +14,7 @@ import {
   queryMyOffers,
 } from "../buttons/btnLend.ts";
 
-import sprite from "../../images/sprite.svg";
+import sprite from "/images/sprite.svg";
 
 const denom = 1_000_000;
 // const denom = 1;

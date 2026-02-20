@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import TradesCount from "./TradesCount";
 import TraderRang from "./Rang";
 import { NumericFormat } from "react-number-format";
-import sprite from "../../images/sprite.svg";
+import sprite from "/images/sprite.svg";
 
 interface TraderProps {
   cryptoOptions: any[];
 }
 
-import usdcImg from '../../images/dist/axl.webp';
+import usdcImg from '/images/dist/axl.webp';
 
 const Offer: React.FC<TraderProps> = ({
   cryptoOptions,

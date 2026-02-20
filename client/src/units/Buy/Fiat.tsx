@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import sprite from "../../images/sprite.svg";
-import usdImg from "../../images/dist/usd.webp";
+import sprite from "/images/sprite.svg";
+import usdImg from "/images/dist/usd.webp";
 
 interface TraderProps {
   fiatOptions: any[];

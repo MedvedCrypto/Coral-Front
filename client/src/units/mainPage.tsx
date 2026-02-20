@@ -2,7 +2,7 @@ import React, { useCallback, useContext, useEffect, useState } from "react";
 
 import "../css/style.css";
 
-import hero from "./public/images/dist/hero.svg";
+import hero from "/images/dist/hero.svg";
 
 
 const MainPage: React.FC = () => {
